@@ -28,38 +28,38 @@
 
 using namespace std;
 
-class Student
-{
-    private:
-            int roll;
-    public:
-            //constructor
-            Student(int r): roll(r){};
+// class Student
+// {
+//     private:
+//             int roll;
+//     public:
+//             //constructor
+//             Student(int r): roll(r){};
 
-            // const function that changes roll with the help of const_cast
-            void func() const
-            {
-                (const_cast <Student*> (this))->roll = 5;
-            }
+//             // const function that changes roll with the help of const_cast
+//             void func() const
+//             {
+//                 (const_cast <Student*> (this))->roll = 5;
+//             }
 
-            int getRoll() 
-            {
-                return roll;
-            }
-};
+//             int getRoll() 
+//             {
+//                 return roll;
+//             }
+// };
 
-int main(void)
-{
-    Student s(3);
+// int main(void)
+// {
+//     Student s(3);
 
-    std::cout << "Old roll number: " << s.getRoll() << std::endl;
+//     std::cout << "Old roll number: " << s.getRoll() << std::endl;
 
-    s.func();
+//     s.func();
 
-    std::cout << "New roll number: " << s.getRoll() << std::endl;
+//     std::cout << "New roll number: " << s.getRoll() << std::endl;
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 /*
@@ -70,19 +70,19 @@ int main(void)
  *  
  */
 
-int fun(int* ptr)
-{
-    return (*ptr + 10);
-}
+// int fun(int* ptr)
+// {
+//     return (*ptr + 10);
+// }
 
-int main(void)
-{
-    const int val = 10;
-    const int *ptr = &val;
-    int *ptr1 = const_cast<int *> (ptr);
-    std::cout << fun(ptr1);
-    return 0;
-}
+// int main(void)
+// {
+//     const int val = 10;
+//     const int *ptr = &val;
+//     int *ptr1 = const_cast<int *> (ptr);
+//     std::cout << fun(ptr1);
+//     return 0;
+// }
 
 
 /*
@@ -105,7 +105,15 @@ int main(void)
     const int val = 10;
     const int *ptr = &val;
     int *ptr1 = const_cast<int *> (ptr);
-    std::cout << fun(ptr1);
+    std::cout << "Before Values:" << std::endl;
+    std::cout << "val : " << val << std::endl;
+    std::cout << "*ptr : " << *ptr << std::endl;
+    std::cout << "*ptr1 : " << *ptr1 << std::endl;
+    fun(ptr1);
+    std::cout << std::endl << "After Values:" << std::endl;
+    std::cout << "val : " << val << std::endl;
+    std::cout << "*ptr : " << *ptr << std::endl;
+    std::cout << "*ptr1 : " << *ptr1 << std::endl;
     return 0;
 }
 
@@ -117,21 +125,21 @@ int main(void)
  *  in the above program, if we remove const from declaration of val, the program
  *  will produce 20 as output
  */
-int fun(int* ptr)
-{
-    *ptr = *ptr + 10;
-    return (*ptr);
-}
+// int fun(int* ptr)
+// {
+//     *ptr = *ptr + 10;
+//     return (*ptr);
+// }
 
-int main(void)
-{
-    int val = 10;
-    const int *ptr = &val;
-    int *ptr1 = const_cast<int *> (ptr);
-    std::cout << "return value : "<< fun(ptr1) << std::endl;
-    std::cout << "val : " << val << std::endl;
-    return 0;
-}
+// int main(void)
+// {
+//     int val = 10;
+//     const int *ptr = &val;
+//     int *ptr1 = const_cast<int *> (ptr);
+//     std::cout << "return value : "<< fun(ptr1) << std::endl;
+//     std::cout << "val : " << val << std::endl;
+//     return 0;
+// }
 
 /*
  *  const_cast is considered safer than simple type casting.
@@ -141,15 +149,15 @@ int main(void)
  *  the following program fails in compilation because 'int* is being typecasted to char*'
  */
 
-int main(void)
-{
-    int a = 40;
-    const int* b = &a;
-    char* c = const_cast<char*> (b);
-    *c = 'A';
+// int main(void)
+// {
+//     int a = 40;
+//     const int* b = &a;
+//     char* c = const_cast<char*> (b);
+//     *c = 'A';
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 /*
@@ -160,17 +168,17 @@ int main(void)
  *  and typeid of c is Pi(pointer to integer)
  */ 
 
-int main(void)
-{
-    int a = 40;
+// int main(void)
+// {
+//     int a = 40;
 
-    const volatile int* b = &a;
+//     const volatile int* b = &a;
 
-    std::cout << "typeid of b : " << typeid(b).name() << std::endl;
+//     std::cout << "typeid of b : " << typeid(b).name() << std::endl;
 
-    int* c = const_cast<int*> (b);
+//     int* c = const_cast<int*> (b);
 
-    std::cout << "typeid of c : " << typeid(c).name() << std::endl;
+//     std::cout << "typeid of c : " << typeid(c).name() << std::endl;
 
-    return 0;
-}
+//     return 0;
+// }

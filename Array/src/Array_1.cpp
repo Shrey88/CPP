@@ -64,7 +64,9 @@ int sumofElements(int A[])
 		so this is not giving us the correct sizeof array A
 		you have to pass the size of the array as parameter to the function
 	*/
-	std::cout << "Size of complete array A :: " << sizeof(A) << std::endl;
+	//std::cout << "Size of complete array A :: " << sizeof(A) << std::endl;
+
+	
 	std::cout << "Size of one element in the array :: " << sizeof(A[0]) << std::endl;
 
 	/*for (; i < array_size; i++)
