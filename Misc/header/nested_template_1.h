@@ -68,10 +68,10 @@ public:
         return *this;
     }
 
-    iterator &operator++(){ // overloading the postfix increment operator. for prefix you dont have to mentions the argument
+    iterator &operator++(){ // overloading the prefix increment operator.
         m_pos++;
 
-        return *this;
+        return *this;u dont have to mentions the argument
     }
 
     T &operator*(){     // overloading the dereference operator

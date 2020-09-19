@@ -1,6 +1,7 @@
 /*
  * Abstract class and Pure Virtual Functions
  * 
+ * 
  * Abstract Class : we do no create an instance of the abstract class 
  *                  abstract class contains a method which have no implementation 
  *                  and we can say that pure virtual functions are pure virtual methods 
@@ -11,3 +12,4 @@
  *                          
  *                         class containing the pure virtual function is an abstract class.
  */
+#include "../header/abstract_class_pure_virtual_functions_1.h"
