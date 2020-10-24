@@ -5,7 +5,7 @@
  *  Encapsulation: (data abstraction / hiding)
  *      encapsulation is defined as wrapping of data and information under a single unit.
  *      
- *      In programming, encapsulation is defined as binding together the data ad the functions
+ *      In programming, encapsulation is defined as binding together the data and the functions
  *      that manipulates them.
  * 
  *      e.g.

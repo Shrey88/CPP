@@ -1,5 +1,5 @@
-#ifndef ABSTRACT_CLASS_H_
-#define ABSTRACT_CLASS_H_
+#ifndef ABSTRACTION_H_
+#define ABSTRACTION_H_
 
 #include <iostream>
 
